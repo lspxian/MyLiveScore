@@ -10,7 +10,7 @@ import android.content.Intent;
 import android.view.Menu;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-aaaaaaaaaaaaaaa
+
 public class DetailCompetition extends Activity {
 
 	@Override
