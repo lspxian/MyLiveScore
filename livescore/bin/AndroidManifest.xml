@@ -60,6 +60,26 @@
             android:name="com.example.livescore.DetailLive"
             android:label="@string/title_activity_detail_live" >
         </activity>
+        <activity
+            android:name="com.example.livescore.DetailSport"
+            android:label="@string/title_activity_detail_sport" >
+        </activity>
+        <activity
+            android:name="com.example.livescore.DetailCompetition"
+            android:label="@string/title_activity_detail_competition" >
+        </activity>
+        <activity
+            android:name="com.example.livescore.LivesByCompetition"
+            android:label="@string/title_activity_lives_by_competition" >
+        </activity>
+        <activity
+            android:name="com.example.livescore.LivesByDate"
+            android:label="@string/title_activity_lives_by_date" >
+        </activity>
+        <activity
+            android:name="com.example.livescore.LivesByDepartAndSport"
+            android:label="@string/title_activity_lives_by_depart_and_sport" >
+        </activity>
     </application>
 
 </manifest>

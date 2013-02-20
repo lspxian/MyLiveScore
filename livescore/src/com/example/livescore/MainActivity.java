@@ -1,8 +1,13 @@
 package com.example.livescore;
 
-import org.json.JSONException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
-import com.example.util.*;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import com.example.util.HttpUtil;
 
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -13,10 +18,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
@@ -37,66 +39,61 @@ public class MainActivity extends Activity {
 		.penaltyDeath()
 		.build());
 		
-		ListView list=(ListView) this.findViewById(R.id.lives);
+		String url="http://live-score.sqli.cloudbees.net/livescore/live/228/score";
+		//Map<String,String> paras=new HashMap<String,String>();
+		//paras.put("scoreEquipe1", "2");
+		//paras.put("scoreEquipe2", "1");
+		//HttpUtil.putRequest(url, str)
+		JSONObject jsonObject=new JSONObject();
 		try {
-			GetLives lives=new GetLives();
-			ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,lives.getListe());
-			list.setAdapter(arrayAdapter);
-			list.setOnItemClickListener(new MyOnItemClickListener());
+			jsonObject.put("scoreEquipe1", 0);
+			jsonObject.put("scoreEquipe2", 0);
+			String str=jsonObject.toString();
+			HttpUtil.putRequest(url, str);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (Exception e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
-		class MyOnItemClickListener implements OnItemClickListener{
+		
+		
+		ListView list=(ListView) this.findViewById(R.id.main);
+		ArrayList<String> fonctions=new ArrayList<String>();
+		fonctions.add("liste des lives");
+		fonctions.add("liste des departements");
+		fonctions.add("liste des sports");
+		fonctions.add("liste des competitions");
+		
+		ArrayAdapter<String> arrayAdapter=new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,fonctions);
+		list.setAdapter(arrayAdapter);
+		list.setOnItemClickListener(new OnItemClickListener(){
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 					long arg3) {
 				// TODO Auto-generated method stub
-				Bundle bundle=new Bundle();
-				bundle.putInt("id", arg2);
-				Intent intent=new Intent(MainActivity.this,DetailLive.class);
-				intent.putExtras(bundle);
-				startActivity(intent);
-			}
-			
-		
-		/*
-		Button bn=(Button) this.findViewById(R.id.getlive);
-		bn.setOnClickListener(new MyClickListener());
-	}
-		class MyClickListener implements View.OnClickListener
-		{
-			@Override
-			public void onClick(View v) {
-				try {
-					GetDetailLive live1=new GetDetailLive(196);
-					TextView commentateur=(TextView) findViewById(R.id.commentateur);
-					commentateur.setText(live1.getCommentateur());
-					TextView equipe1=(TextView) findViewById(R.id.equipe1);
-					equipe1.setText(live1.getEquipe1());
-					TextView equipe2=(TextView) findViewById(R.id.equipe2);
-					equipe2.setText(live1.getEquipe2());
-					TextView scoreEquipe1=(TextView) findViewById(R.id.scoreEquipe1);
-					scoreEquipe1.setText(live1.getScoreEquipe1());
-					TextView scoreEquipe2=(TextView) findViewById(R.id.scoreEquipe2);
-					scoreEquipe2.setText(live1.getScoreEquipe2());
-					TextView sport=(TextView) findViewById(R.id.sport);
-					sport.setText(live1.getSportNom());
-					TextView departement=(TextView) findViewById(R.id.departement);
-					departement.setText(live1.getDepartementNom());
-					TextView competition=(TextView) findViewById(R.id.competition);
-					competition.setText(live1.getCompititionNom());
-					TextView date=(TextView) findViewById(R.id.date);
-					date.setText(live1.getDebut());
-					
-				} catch (JSONException e) {
-					e.printStackTrace();
-				} catch (Exception e) {
-					e.printStackTrace();
+				switch(arg2){
+				case 0:
+					Intent intent0=new Intent(MainActivity.this,ListeLives.class);
+					startActivity(intent0);
+					break;
+				case 1:
+					Intent intent1=new Intent(MainActivity.this,ListeDepartements.class);
+					startActivity(intent1);
+					break;
+				case 2:
+					Intent intent2=new Intent(MainActivity.this,ListeSports.class);
+					startActivity(intent2);
+					break;
+				case 3:
+					Intent intent3=new Intent(MainActivity.this,ListeCompetition.class);
+					startActivity(intent3);
+					break;
 				}
-				
-			}*/
-		}
+			}
+		});
+	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {

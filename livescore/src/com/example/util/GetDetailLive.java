@@ -20,8 +20,16 @@ public class GetDetailLive {
 		jsonArray=jsonObject.getJSONArray("evenements");
 	}
 	
-	public String getCommentateur() throws JSONException{
-		return jsonObject.getString("commentateur");
+	public int getId() throws Exception{
+		return jsonObject.getInt("id");
+	}
+	
+	public String getCommentateur(){
+		try {
+			return jsonObject.getString("commentateur");
+		} catch (JSONException e) {
+			return " ";
+		}
 	}
 	
 	public String getNom() throws JSONException{
@@ -44,12 +52,20 @@ public class GetDetailLive {
 		return jsonObject.getString("scoreEquipe2");
 	}
 	
-	public String getCompititionNom() throws JSONException{
-		return jsonObject.getJSONObject("competition").getString("libelle");
+	public String getCompititionNom(){
+		try {
+			return jsonObject.getJSONObject("competition").getString("libelle");
+		} catch (JSONException e) {
+			return " ";
+		}
 	}
 	
-	public String getDepartementNom() throws JSONException{
-		return jsonObject.getJSONObject("departement").getString("nom");
+	public String getDepartementNom(){
+		try {
+			return jsonObject.getJSONObject("departement").getString("nom");
+		} catch (JSONException e) {
+			return " ";
+		}
 	}
 	
 	public String getLatitude() throws JSONException{
@@ -60,16 +76,29 @@ public class GetDetailLive {
 		return jsonObject.getString("longitude");
 	}
 	
-	public String getShortDescription() throws JSONException{
-		return jsonObject.getString("shortDescription");
+	public String getShortDescription(){
+		try {
+			return jsonObject.getString("shortDescription");
+		} catch (JSONException e) {
+			return " ";
+		}
 	}
 	
-	public String getLongDescription() throws JSONException{
-		return jsonObject.getString("longDescription");
+	public String getLongDescription(){
+		try {
+			return jsonObject.getString("longDescription");
+		} catch (JSONException e) {
+			return " ";
+		}
 	}
 	
-	public String getDebut() throws JSONException, ParseException{
-		String s=jsonObject.getString("dateDebut");
+	public String getDebut() throws ParseException{
+		String s;
+		try {
+			s = jsonObject.getString("dateDebut");
+		} catch (JSONException e) {
+			return " ";
+		}
 		DateFormat format=DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM, Locale.US);
 		Date date=format.parse(s);
 		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd");
@@ -87,5 +116,9 @@ public class GetDetailLive {
 	
 	public String getEvenement(int id) throws JSONException{
 		return jsonArray.getJSONObject(id).getString("commentaire");
+	}
+	
+	public int getEvenementId(int i) throws JSONException{
+		return jsonArray.getJSONObject(i).getInt("id");
 	}
 }

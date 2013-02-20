@@ -13,5 +13,10 @@
     <string name="title_activity_lives_date">LivesDate</string>
     <string name="title_activity_liste_lives">ListeLives</string>
     <string name="title_activity_detail_live">DetailLive</string>
+    <string name="title_activity_detail_sport">DetailSport</string>
+    <string name="title_activity_detail_competition">DetailCompetition</string>
+    <string name="title_activity_lives_by_competition">LivesByCompetition</string>
+    <string name="title_activity_lives_by_date">LivesByDate</string>
+    <string name="title_activity_lives_by_depart_and_sport">LivesByDepartAndSport</string>
 
 </resources>
