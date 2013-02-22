@@ -1,0 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp" 
+    tools:context=".Add_page" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/commentateur" />
+     <EditText
+        android:id="@+id/commentateur"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />    
+
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/nom" />
+     <EditText
+        android:id="@+id/nom"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/equipe1" />
+     <EditText
+        android:id="@+id/equipe1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/equipe2" />
+     <EditText
+        android:id="@+id/equipe2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />    
+    
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/competitionId" />
+     <EditText
+        android:id="@+id/competitionId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/departementId" />
+     <EditText
+        android:id="@+id/departementId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/latitude" />
+     <EditText
+        android:id="@+id/latitude"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/longitude" />
+     <EditText
+        android:id="@+id/longitude"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shortDescription" />
+     <EditText
+        android:id="@+id/shortDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/longDescription" />
+     <EditText
+        android:id="@+id/longDescription"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/debut" />
+     <EditText
+        android:id="@+id/debut"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+     
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/sportId" />
+     <EditText
+        android:id="@+id/sportId"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/reminder" />
+
+</LinearLayout>

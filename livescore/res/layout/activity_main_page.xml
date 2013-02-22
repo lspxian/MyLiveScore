@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Main_page" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hello_livescore" />
+
+    <Button android:id="@+id/main_button_1"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/main_button_1"
+		android:onClick="add"
+		/>
+    
+    <Button android:id="@+id/main_button_2"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/main_button_2"
+		/>
+    
+    <Button android:id="@+id/main_button_3"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/main_button_3"
+		/>
+    
+    <Button android:id="@+id/main_button_4"
+		android:layout_width="fill_parent"
+		android:layout_height="wrap_content"
+		android:text="@string/main_button_4"
+		/>
+    
+</LinearLayout>
